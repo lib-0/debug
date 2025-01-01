@@ -14,7 +14,9 @@ endif()
 
 add_executable(example main.c)
 
-target_include_directories(example PRIVATE ${INCLUDE_DIR})
+target_include_directories(example PRIVATE ${INCLUDE_DIR} ../external_include)
+
+target_compile_definitions(example PRIVATE G_SHARED=0)
 
 get_filename_component(ABS_LIB_DIR "${LIB_DIR}" ABSOLUTE)
 target_link_libraries(example PRIVATE "${ABS_LIB_DIR}/-0_debug$<IF:$<PLATFORM_ID:Windows>,.lib,.a>")

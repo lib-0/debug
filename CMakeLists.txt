@@ -20,8 +20,27 @@ set_target_properties(G_0_debug_shared PROPERTIES
   SOVERSION ${PROJECT_VERSION_MAJOR}
 )
 
-target_include_directories(G_0_debug_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
-target_include_directories(G_0_debug_shared PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(G_0_debug_static
+  PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+  PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/external_include
+)
+
+target_include_directories(G_0_debug_shared
+  PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+  PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/external_include
+)
+
+target_compile_definitions(G_0_debug_static
+  PRIVATE G_SHARED=0
+)
+
+target_compile_definitions(G_0_debug_shared
+  PRIVATE G_SHARED=1
+)
 
 install(TARGETS G_0_debug_static G_0_debug_shared
   ARCHIVE DESTINATION lib
@@ -29,4 +48,10 @@ install(TARGETS G_0_debug_static G_0_debug_shared
   RUNTIME DESTINATION bin
 )
 
-install(FILES include/-0_debug.h DESTINATION include)
+install(
+  FILES
+    include/-0_debug.h
+    include/-0_debug_types.h
+  DESTINATION
+    include
+)
