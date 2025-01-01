@@ -15,9 +15,9 @@ set_target_properties(G_0_debug_static PROPERTIES
 
 add_library(G_0_debug_shared SHARED ${SOURCES})
 set_target_properties(G_0_debug_shared PROPERTIES
-    OUTPUT_NAME "-0_debug"
-    VERSION ${PROJECT_VERSION}
-    SOVERSION ${PROJECT_VERSION_MAJOR}
+  OUTPUT_NAME "-0_debug"
+  VERSION ${PROJECT_VERSION}
+  SOVERSION ${PROJECT_VERSION_MAJOR}
 )
 
 target_include_directories(G_0_debug_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
