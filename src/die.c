@@ -1,7 +1,13 @@
+#define G_THIS
 #include "-0_debug.h"
+#undef G_THIS
 
 #include <stdio.h>
 #include <stdlib.h>
+
+#define G_THIS
+#include "-0_common.h"
+#undef G_THIS
 
 void g_0_debug_die(G_0_DEBUG_FUNCTION_PARAMETER_PRELUDE const char *message) {
   G_0_DEBUG_FUNCTION_BODY_PRELUDE;
