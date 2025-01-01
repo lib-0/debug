@@ -20,7 +20,7 @@ typedef struct g_0_debug_stacktrace_node {
 
 #ifdef NDEBUG
 
-#define G_0_DEBUG_FUNCTION_PARAMETER_PRELUDE0
+#define G_0_DEBUG_FUNCTION_PARAMETER_PRELUDE0 void
 #define G_0_DEBUG_FUNCTION_PARAMETER_PRELUDE
 
 #define G_0_DEBUG_ROOT_FUNCTION_BODY_PRELUDE                                   \
