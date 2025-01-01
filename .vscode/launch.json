@@ -1,0 +1,16 @@
+{
+  "configurations": [
+    {
+      "name": "(Windows) Launch",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/example/out_self_debug/bin/example.exe",
+      "args": ["42", "6", "7"],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "console": "integratedTerminal",
+      "preLaunchTask": "(Windows) Launch",
+    },
+  ],
+}
