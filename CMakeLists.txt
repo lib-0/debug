@@ -51,7 +51,15 @@ install(TARGETS G_0_debug_static G_0_debug_shared
 install(
   FILES
     include/-0_debug.h
-    include/-0_debug_types.h
   DESTINATION
     include
+)
+
+install(
+  FILES
+    include/-0/debug.h
+    include/-0/debug_types.h
+    include/-0/debug_shortcut.h
+  DESTINATION
+    include/-0
 )
