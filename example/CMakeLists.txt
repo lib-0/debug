@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.10)
 
 project(example_project LANGUAGES C)
 
@@ -19,7 +19,7 @@ target_include_directories(example PRIVATE ${INCLUDE_DIR} ../external_include)
 target_compile_definitions(example PRIVATE G_SHARED=0)
 
 get_filename_component(ABS_LIB_DIR "${LIB_DIR}" ABSOLUTE)
-target_link_libraries(example PRIVATE "${ABS_LIB_DIR}/-0_debug$<IF:$<PLATFORM_ID:Windows>,.lib,.a>")
+target_link_libraries(example PRIVATE "${ABS_LIB_DIR}/$<IF:$<PLATFORM_ID:Windows>,,lib>-0_debug$<IF:$<PLATFORM_ID:Windows>,.lib,.a>")
 
 install(TARGETS example
   ARCHIVE DESTINATION lib

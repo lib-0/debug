@@ -16,7 +16,7 @@ g_0_debug_die(G_0_DEBUG_FUNCTION_PARAMETER_PRELUDE const char *message) {
 #ifdef NDEBUG
 
   if (message) {
-    fprintf(stderr, "%s", message);
+    fprintf(stderr, "%s\n", message);
   }
   abort();
 
