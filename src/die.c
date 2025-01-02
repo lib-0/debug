@@ -9,7 +9,8 @@
 #include "-0_common.h"
 #undef G_THIS
 
-void g_0_debug_die(G_0_DEBUG_FUNCTION_PARAMETER_PRELUDE const char *message) {
+G_EXPORT void
+g_0_debug_die(G_0_DEBUG_FUNCTION_PARAMETER_PRELUDE const char *message) {
   G_0_DEBUG_FUNCTION_BODY_PRELUDE;
 
 #ifdef NDEBUG
